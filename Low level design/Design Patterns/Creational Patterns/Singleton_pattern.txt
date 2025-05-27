@@ -3,11 +3,8 @@ The Singleton Pattern ensures that a class has only one instance and provides a 
 
 🔹 2. When to Use Singleton
 Use it when:
-
 Exactly one instance is required (e.g., configuration, logging, thread pool, cache, database connection).
-
 The instance needs to be accessible globally.
-
 Managing shared resources.
 
 🔹 3. Core Characteristics
@@ -24,9 +21,7 @@ Static Method	Returns the same instance
 java
 public class Singleton {
     private static Singleton instance;
-
     private Singleton() {}
-
     public static synchronized Singleton getInstance() {
         if (instance == null) {
             instance = new Singleton();
@@ -41,7 +36,6 @@ class Singleton {
 private:
     static Singleton* instance;
     Singleton() {}
-
 public:
     static Singleton* getInstance() {
         if (instance == nullptr) {
@@ -85,56 +79,35 @@ Bill Pugh Singleton (Java)	Uses static inner class for lazy loading
 
 🔹 8. Best Practices
 Use enum singleton in Java for serialization safety.
-
 Avoid overusing it — it’s a global state.
-
 Use dependency injection if testability is a concern.
-
 Prefer lazy loading if startup cost is high.
 
 🔹 9. Real-World Examples
 Logger (single logging service across app)
-
 Configuration Manager
-
 Database Connection Pool
-
 Thread Pool Manager
-
 Cache Managers
-
 Service Locator
 
 🔹 10. Common Pitfalls
 Not thread-safe in multi-threaded environments
-
 Breaking singleton with serialization/deserialization
-
 Allowing cloning or reflection to create new instances
-
 Overusing it when stateless utility classes suffice
 
 🔹 11. Testing Singleton
 Use mocking frameworks
-
 Avoid using direct Singleton calls in business logic
-
 Inject Singleton instance using dependency injection for better testability
-
-
 
 ❌ How Singleton Violates SRP
 In a pure object-oriented design, each class should:
-
 Handle only its core business logic, and
-
 Not be responsible for managing how it’s instantiated.
-
 However, the Singleton class:
-
 Does two things:
-
 It implements business logic (e.g., logging, configuration, etc.).
-
 It manages its own instance creation (enforcing one instance globally).
 
