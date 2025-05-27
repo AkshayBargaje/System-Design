@@ -1,0 +1,5 @@
+✅ Key Concepts:
+Concept	Explanation
+__new__	Creates and returns a new object
+__init__	Initializes the object after it's created
+_instance	Stores the single object instance
