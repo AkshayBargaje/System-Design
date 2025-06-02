@@ -4,8 +4,7 @@ Why we need Factory pattern?
     You have many subclasses of a product/interface.
     You want to decouple code from specific class instantiations.
 
-Why to use it
-
+Why to use it ?
 1. Decouples Code
 # ❌ Tight coupling:
 animal = Dog()
@@ -14,7 +13,6 @@ animal = AnimalFactory.get_animal("dog")
 
 2. Easy to add new Types
 Just add a new subclass and register it — no need to change core logic.
-
 
 3. 🔄 Implements Open/Closed Principle
 Open for extension (new classes).
