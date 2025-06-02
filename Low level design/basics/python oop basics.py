@@ -143,3 +143,6 @@ def say_hello():
     print("Hello!")
 
 say_hello()
+# print("Before function runs")
+# print("Hello!")
+# print("After function runs")
